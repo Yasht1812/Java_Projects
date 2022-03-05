@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="emp" class="com.thinkitive.day2.springdemo.collections.Employee" autowire="byType">
+	
+	 <property name="empid" value="123"></property>
+ <property name="ename" value="Hello"></property>
+ <property name="salary" value="20000"></property>
+ 
+
+  <property name="address" ref="addr"></property>
+	</bean>
+	
+	
+	
+	<bean id="addr" class="com.thinkitive.day2.springdemo.collections.Address">
+	
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+package com.thinkitive.auditlog;
+
+public class AuditLogMapperImpl implements AuditLogMapper {
+
+	@Override
+	public AuditLogDTO tDto(AuditLog auditLog) {
+		if(auditLog == null) {
+			return null;
+		}
+		AuditLogDTO auditLogDTO = AuditLogMapper.INSTANCE.tDto(auditLog);
+		auditLogDTO.setId(auditLog.getId());
+		
+		
+		
+	}
+
+}

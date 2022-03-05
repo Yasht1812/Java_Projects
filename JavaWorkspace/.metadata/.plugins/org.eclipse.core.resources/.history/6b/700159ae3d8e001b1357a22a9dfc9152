@@ -1,0 +1,12 @@
+package com.thinkitive.auditlog;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AuditLogMapper {
+	@Autowired
+	AuditLog auditLog;
+	
+	ModelMapper mapper = new ModelMapper();
+	AuditLogDTO auditLogDTO = mapper.map(auditLog, AuditLogDTO.class);
+}

@@ -1,0 +1,15 @@
+package com.thinkitive.practice.day1;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Set;
+
+import java.util.Iterator;
+import java.util.Map;
+
+public class Demo {
+
+	public static void main(String[] args) {
+	
+}
+}

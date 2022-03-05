@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="emp" class="com.thinkitive.day1.springdemo.Employee" autowire="byType">
+	<!-- <bean id="emp" class="com.thinkitive.day1.springdemo.Employee" factory-method="getEmployee"> -->
+	<!-- <bean id="hi" class="com.thinkitive.day1.springdemo.EmployeeFactory"></bean>
+	<bean id="emp" factory-bean="hi" factory-method="getInstance"> -->
+	 <property name="empid" value="123"></property>
+ <property name="ename" value="Hello"></property>
+ <property name="skills">
+ <list>
+ <value>Java</value>
+ <value>Python</value>
+ <value>Kotlin</value>
+ </list>
+ </property>
+ <property name="addresses" ref="addr"></property>
+	</bean>
+	
+	
+	<!-- <constructor-arg name="empid" value = "1"></constructor-arg>
+	<constructor-arg name="ename" value="ABC"></constructor-arg>
+	<constructor-arg name="salary" value="9999"></constructor-arg>
+ -->
+	<bean id="addr" class="com.thinkitive.day1.springdemo.Address">
+	<constructor-arg name="city" value="Pune"></constructor-arg>
+	<constructor-arg name="pincode" value="411028"></constructor-arg>
+	</bean>
+</beans>

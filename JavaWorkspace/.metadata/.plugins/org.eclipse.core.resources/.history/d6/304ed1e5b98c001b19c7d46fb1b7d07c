@@ -1,0 +1,79 @@
+package com.thinkitive.ehrbridge.util;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Constants {
+
+	public static final String GRANT_TYPE = "grant_type";
+	public static final String CLIENT_CREDENTIALS = "client_credentials";
+	public static final String SCOPE = "scope";
+	public static final String CERNER_SYSTEM_SCOPES = "system/Account.read system/AllergyIntolerance.read system/Appointment.read system/Binary.read system/CarePlan.read system/CareTeam.read system Condition.read system/Consent.read system/Coverage.read system/Device.read system/DocumentReference.read system/Encounter.read system/Goal.read system/Immunization.read system/Location.read system/MedicationRequest.read system/NutritionOrder.read system/Observation.read system/Organization.read system/Patient.read system/Person.read system/Practitioner.read system/Procedure.read system/Provenance.read system/RelatedPerson.read system/Schedule.read system/ServiceRequest.read system/Slot.read system/AllergyIntolerance.write system/Appointment.write system/Basic.write system/Condition.write system/Coverage.write system/DocumentReference.write system/Encounter.write system/Immunization.write system/MedicationRequest.write system/Observation.write system/Organization.write system/Patient.write system/Practitioner.write system/Procedure.write system/Provenance.write system/RelatedPerson.write system/FinancialTransaction.write";
+	public static final String PATIENT_RESOURCE = "PATIENT";
+	public static final String APPOINTMENT_RESOURCE = "APPOINTMENT";
+	public static final String PRACTITIONER_RESOURCE = "PRACTITIONER";
+	public static final String ORGANIZATION_RESOURCE = "ORGANIZATION";
+	public static final String LOCATION_RESOURCE = "LOCATION";
+	public static final String ORGANIZATION_PREFIX = "Organization/";
+	public static final String PRACTITIONER_PREFIX = "Practitioner/";
+	public static final String PATIENT_PREFIX = "Patient/";
+	public static final String ENCOUNTER_PREFIX = "Encounter/";
+	public static final String LOCATION_PREFIX = "Location/";
+	public static final String SLOT_PREFIX = "Slot/";
+	public static final String APPOINTMENT_PREFIX = "Appointment/";
+
+	public static final String ORGANIZATION_TYPE_SYSTEM = "http://terminology.hl7.org/CodeSystem/organization-type";
+	public static final String ORGANIZATION_IDENTIFIER_SYSTEM = "http://terminology.hl7.org/CodeSystem/v2-0203";
+	public static final String IMMUNIZATION_RESOURCE = "IMMUNIZATION";
+
+	/*
+	 * key - value NPI - http://hl7.org/fhir/sid/us-npi OID - TAX - TODO: Due to
+	 * lack of documentation, we are not supporting OID and TAX right now
+	 */
+	public static final Map<String, String> ORGANIZATION_IDENTIFIER_TYPE_SYSTEM_MAP = ImmutableMap.of("NPI",
+			"http://hl7.org/fhir/sid/us-npi");
+
+	public static final Map<String, String> MARITAL_STATUS_MAP = getMaritalStatusMap();
+	public static final String MARITAL_STATUS_SYSTEM = "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus";
+
+	private static Map<String, String> getMaritalStatusMap() {
+		Map<String, String> map = new HashMap<>();
+		map.put("D", "Divorced");
+		map.put("L", "Legally Separated");
+		map.put("M", "Married");
+		map.put("S", "Never Married");
+		map.put("W", "Widowed");
+
+		return map;
+	}
+
+	public static final Map<String, String> VACCINE_CODE_COLLECTION = getVaccineCodeCollection();
+	public static final String VACCINE_CODE_SYSTEM = "https://fhir.cerner.com/ec2458f2-1e24-41c8-b71b-0e701af7583d/codeSet/72";
+
+	private static Map<String, String> getVaccineCodeCollection() {
+		Map<String, String> map = new HashMap<>();
+		map.put("1", "hepatitis A-hepatitis B vaccine");
+		return map;
+
+	}
+
+	public static final List<String> BIRTH_SEX_LIST = ImmutableList.of("M", "F", "UNK");
+	public static final String BIRTH_SEX_SYSTEM = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex";
+
+	public static final String COMMUNICATION_LANGUAGE_SYSTEM = "urn:ietf:bcp:47";
+
+	// key - ehr-bridge-field-name value - cerner-field-name
+	// ex, key - contact value - telecom
+	public static final Map<String, String> CERNER_FIELDS_MAP = ImmutableMap.of("contact", "telecom", "address",
+			"address", "practitioner", "generalPractitioner", "name", "name");
+
+	public static final Integer REC_COUNT = 0;
+	// number of max recursive method calls
+	public static final Integer MAX_REC_COUNT = 2;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringMVCDemo"/>
+		<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringDemo2"/>
+		<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringDemo"/>
+		<item value="/home/thinkitive/Backup/JavaWebWorkspace/SpringDemo"/>
+	</list>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="574"/>
+		<item key="DIALOG_Y_ORIGIN" value="315"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringMVCDemo"/>
+			<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringDemo2"/>
+			<item value="/home/thinkitive/Workspace/JavaWebWorkspace/SpringDemo"/>
+			<item value="/home/thinkitive/Yash/SpringDemo"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

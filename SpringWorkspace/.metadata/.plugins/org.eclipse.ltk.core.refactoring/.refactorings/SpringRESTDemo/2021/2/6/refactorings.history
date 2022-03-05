@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;SpringRESTHibernate/src/main/java/com.thinkitive&apos;&#x0A;- Original project: &apos;SpringRESTDemo&apos;&#x0A;- Destination element: &apos;SpringRESTHibernate/src/main/java/com.thinkitive&apos;&#x0A;- Original elements:&#x0A;     com.thinkitive.Employee.java&#x0A;     com.thinkitive.MyController.java" description="Copy compilation units" destination="=SpringRESTHibernate/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.thinkitive" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.thinkitive{Employee.java" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.thinkitive{MyController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1612520361657" units="2" version="1.0"/>
+</session>

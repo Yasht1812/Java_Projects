@@ -1,0 +1,29 @@
+package com.thinkitive.practice.day1;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Set;
+
+import java.util.Iterator;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		HashMap<Integer, String> hm = new HashMap<Integer , String>(); 
+		hm.put(1, "Yash"); 
+		hm.put(2, "Abhi");
+		//System.out.println(hm);
+		Set set = hm.keySet();
+		System.out.println(set);
+		Collection c = hm.values();
+		System.out.println(c);
+		
+		Set s1 = hm.entrySet();
+		System.out.println(s1);
+		
+		Iterator iterator = s1.iterator();
+		while(iterator.hasNext())
+		
+	}
+	
+}

@@ -1,0 +1,22 @@
+package com.thinkitive.auditlog;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class AuditLog {
+
+	@Id
+	@GeneratedValue
+	private int iD;
+	private String ehr;
+	private String method;
+	private String request_body;
+	private String request_url;
+	private String response_body;
+	private String response_status;
+	private String timestamp;
+
+	
+}

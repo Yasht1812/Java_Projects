@@ -1,0 +1,29 @@
+package com.thinkitive.auditlog;
+
+
+
+
+
+import java.awt.print.Pageable;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import net.bytebuddy.asm.Advice.OffsetMapping.Sort;
+
+@Service
+public class AuditLogServiceImpl {
+
+	@Autowired
+	AuditLogService auditLogService;
+	
+
+	public List<AuditLog> getAuditLog(Integer pageNo , Integer pageSize , String sortBy) {
+		Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.bysortBy);
+		Page<AuditLog> pagedResult = auditLogService.findAll(pageable);
+	}
+
+}

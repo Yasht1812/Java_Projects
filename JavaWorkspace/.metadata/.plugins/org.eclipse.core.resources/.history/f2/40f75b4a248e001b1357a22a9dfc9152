@@ -1,0 +1,17 @@
+package com.thinkitive.auditlog;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuditLogController {
+
+	@Autowired
+	private AuditLogServiceImpl auditLogServiceImpl;
+
+	@GetMapping("/auditlogdata")
+	public void setAuditData() {
+		auditLogServiceImpl.getAuditLog();
+	}
+}

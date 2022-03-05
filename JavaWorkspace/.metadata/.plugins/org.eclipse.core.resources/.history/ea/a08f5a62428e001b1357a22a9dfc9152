@@ -1,0 +1,25 @@
+package com.thinkitive.auditlog;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuditLogController {
+
+	@Autowired
+	private AuditLogServiceImpl auditLogServiceImpl;
+	@Autowired
+	AuditLogMapper auditLogMapper;
+
+	@GetMapping("/audit-log-show-details")
+	public List<AuditLog> getAuditData(@RequestParam Integer pageNo, @RequestParam Integer pageSize) {
+		return auditLogServiceImpl.getAuditDetails(pageNo, pageSize);
+	}
+	
+	@GetMapping("/audit-log")
+	public List<AuditLog> getAuditLogs(@RequestParam Integer pageNo, @RequestParam Integer pageSize)
+}

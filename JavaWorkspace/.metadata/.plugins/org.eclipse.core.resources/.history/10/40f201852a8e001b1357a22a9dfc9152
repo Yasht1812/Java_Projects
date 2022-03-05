@@ -1,0 +1,11 @@
+package com.thinkitive.auditlog;
+
+
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+
+@Repository
+public interface AuditLogService extends PagingAndSortingRepository<AuditLog, Integer> {
+
+}

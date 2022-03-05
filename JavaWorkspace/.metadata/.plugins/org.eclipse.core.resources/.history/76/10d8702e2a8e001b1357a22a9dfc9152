@@ -1,0 +1,21 @@
+package com.thinkitive.auditlog;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuditLogController {
+
+	@Autowired
+	private AuditLogServiceImpl auditLogServiceImpl;
+	
+	@GetMapping("/auditlogdata")
+	public List<AuditLog> getAuditData(@RequestParam(defaultValue = "0") Integer pageNo, 
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+		return auditLogServiceImpl.getAuditLog(pageNo, pageSize);
+	}
+}

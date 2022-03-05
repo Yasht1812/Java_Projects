@@ -1,0 +1,11 @@
+package com.thinkitive.day5;
+
+public class FunctionalInterfaceMain  {
+
+	public static void main(String[] args) {
+		MyInterface1 add = (a,b) -> a+b;
+		MyInterface1 sub = (a,b) -> a-b;
+	}
+
+	
+}

@@ -1,0 +1,10 @@
+package com.thinkitive.day5;
+
+public class FunctionalInterfaceMain implements MyInterface1 {
+
+	public static void main(String[] args) {
+		FunctionalInterface add = (a,b) -> a+b;
+	}
+
+	
+}

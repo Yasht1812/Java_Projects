@@ -1,0 +1,26 @@
+package com.thinkitive.ehrbridge.mapper;
+
+
+import org.hl7.fhir.r4.model.Immunization;
+import org.hl7.fhir.r4.model.Immunization.ImmunizationStatus;
+import org.springframework.stereotype.Service;
+
+import com.google.common.base.Strings;
+import com.thinkitive.ehrbridge.dto.ImmunizationDTO;
+
+
+
+@Service
+public class ImmunizationMapper {
+
+	 
+	public Immunization immunizationDTOToFhirR4Immunization(ImmunizationDTO immunizationDTO) {
+		Immunization immunizationDTO1 = new Immunization(); 
+		if(!Strings.isNullOrEmpty(immunizationDTO.getStatus())) {
+			
+		}
+		
+		return immunizationDTO1;
+	}
+
+}

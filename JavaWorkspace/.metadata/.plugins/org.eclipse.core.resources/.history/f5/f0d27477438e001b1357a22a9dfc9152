@@ -1,0 +1,23 @@
+package com.thinkitive.auditlog;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AuditLogMapper {
+	@Autowired
+	AuditLog auditLog;
+	@Autowired
+	AuditLogRepository auditLogRepository;
+	
+	ModelMapper mapper = new ModelMapper();
+	public AuditLogDTO convertToDto(List<AuditLog> auditLog2) {
+//		AuditLog storedAuditLog = auditLogRepository.save(auditLog);
+		AuditLogDTO auditLogDTO = mapper.map(auditLog2, AuditLogDTO.class);
+		return auditLogDTO;
+		
+	}
+	
+	
+}

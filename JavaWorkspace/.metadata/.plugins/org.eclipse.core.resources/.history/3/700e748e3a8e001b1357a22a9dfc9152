@@ -1,0 +1,14 @@
+package com.thinkitive.auditlog;
+
+public class AuditLogDTO {
+	private int id;
+	private String ehr;
+	private String method;
+	private String request_body;
+	private String request_url;
+	private String response_body;
+	private String response_status;
+	private String timestamp;
+	
+	
+}

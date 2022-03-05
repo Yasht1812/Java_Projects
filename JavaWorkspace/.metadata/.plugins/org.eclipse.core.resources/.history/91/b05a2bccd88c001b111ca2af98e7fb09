@@ -1,0 +1,82 @@
+package com.thinkitive.ehrbridge.mapper;
+
+import java.util.Collections;
+import java.util.List;
+import org.hl7.fhir.r4.model.CodeableConcept;
+import org.hl7.fhir.r4.model.Coding;
+import org.hl7.fhir.r4.model.Immunization;
+import org.hl7.fhir.r4.model.Immunization.ImmunizationStatus;
+import org.hl7.fhir.r4.model.Reference;
+import org.springframework.stereotype.Service;
+import com.google.common.base.Strings;
+import com.thinkitive.ehrbridge.dto.ImmunizationDTO;
+import com.thinkitive.ehrbridge.util.Constants;
+
+@Service
+public class ImmunizationMapper {
+
+	public Immunization immunizationDTOToFhirR4Immunization(ImmunizationDTO immunizationDTO) {
+		Immunization immunization = new Immunization();
+		ImmunizationStatus immunizationStatus = immunizationDTO.getStatus();
+		System.out.println(immunizationStatus);
+		if (immunizationStatus.equals("COMPLETED") || immunizationStatus.equals("ENTEREDINERROR")
+				|| immunizationStatus.equals("NOTDONE") || immunizationStatus.equals("NULL"))
+			System.out.println(immunizationStatus);
+		immunization.setStatus(immunizationStatus);
+
+		if (immunizationDTO.getPatient() != null) {
+			Reference reference = new Reference();
+			reference.setReference(Constants.PATIENT_PREFIX.concat(immunizationDTO.getPatientID()));
+			reference.setDisplay(immunizationDTO.getDisplay());
+			immunization.setPatient(reference);
+		}
+
+		if (immunizationDTO.getEncounterID() != null) {
+			Reference reference = new Reference();
+			reference.setReference(Constants.ENCOUNTER_PREFIX.concat(immunizationDTO.getEncounterID()));
+		}
+
+		if (immunizationDTO.getManufacturer() != null) {
+			Reference reference = new Reference();
+			reference.setDisplay(immunizationDTO.getManufacturer());
+		}
+
+		if (!Strings.isNullOrEmpty(immunization.getLotNumber())) {
+			immunization.setLotNumber(immunizationDTO.getLotNumber());
+		}
+
+		if (immunization.getExpirationDate() != null) {
+			immunization.setExpirationDate(immunizationDTO.getExpirationDate());
+		}
+	//	if (!Strings.isNullOrEmpty(immunizationDTO.getVaccineCode1())) {
+		immunization.setVaccineCode(getVaccineCodeableConcept(immunizationDTO.getVaccineCode1()));
+	//	}
+		return immunization;
+	}
+
+	public CodeableConcept getVaccineCodeableConcept(String vaccineCode1) {
+		CodeableConcept codeableConcept = new CodeableConcept();
+		codeableConcept.setText("hepatitis A-hepatitis B vaccine");
+		Coding coding = new Coding();
+		coding.setSystem(Constants.VACCINE_CODE_SYSTEM);
+		coding.setCode(vaccineCode1);
+		coding.setDisplay("hepatitis A-hepatitis B vaccine");
+		coding.setUserSelected(false);
+		codeableConcept.setCoding(Collections.singletonList(coding));
+		return codeableConcept;
+
+	}
+
+	public String getVaccineCode(Immunization immunization) {
+		CodeableConcept vaccineCode = immunization.getVaccineCode();
+		List<Coding> codings = vaccineCode.getCoding();
+		if (codings == null || codings.size() == 0)
+			return null;
+		for (Coding coding : codings) {
+			if (!coding.getUserSelected())
+				return coding.getCode();
+		}
+		return null;
+	}
+
+}

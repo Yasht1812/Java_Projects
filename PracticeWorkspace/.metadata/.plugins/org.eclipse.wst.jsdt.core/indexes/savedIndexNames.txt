@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+/home/thinkitive/Workspace/PracticeWorkspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1924484980.index
+202797682.index
+600140733.index
+3476119926.index
+3694048750.index
+1025852875.index
+4120525736.index
+4145687982.index
+3419160568.index

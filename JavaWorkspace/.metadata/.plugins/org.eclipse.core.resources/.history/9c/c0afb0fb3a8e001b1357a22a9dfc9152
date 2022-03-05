@@ -1,0 +1,5 @@
+package com.thinkitive.auditlog;
+
+public class AuditLogMapperImpl {
+
+}
